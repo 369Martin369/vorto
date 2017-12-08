@@ -5,19 +5,18 @@ Vorto provides a variety of existing Bosch IoT Suite generators, for you to get 
 1. Create a very simple Information Model, describing a few properties of the device and publish the model to the Vorto Repository
 2. Register a specific device by creating a new thing in Bosch IoT Things Service
 3. Generate a Python Code that sends telemetry device data to the thing in the Bosch IoT Suite via MQTT
-4. Generate an AngularJS / SpringBoot Java Application that consumes thing data from Bosch IoT Things and displays the data in a User Interface
 
 ## Prerequisite
 
-- You have successfully booked the following services:
-	- Bosch IoT Things Service
-	- Bosch IoT Permissions Service
+- [Book](https://www.bosch-iot-suite.com) the following Bosch IoT Suite services :
+	- Bosch IoT Hub
+	- Bosch IoT Things
 
 ## Steps
 
 ### 1. Create a simple Information Model for a device
 
-- Open the [Bosch IoT Suite Developer Console](https://console.bosch-iot-suite.com) and log in with your Bosch IoT Permissions credentials.
+- Open the [Bosch IoT Suite Developer Console](https://console.bosch-iot-suite.com) and log in with your Bosch ID.
 - Select **Connect device** in the home screen
 
 <img src="./images/gettingstarted_bosch/console_home.png" width="70%">
@@ -37,32 +36,24 @@ Vorto provides a variety of existing Bosch IoT Suite generators, for you to get 
 
 <img src="./images/gettingstarted_bosch/console_createthingtype_3.png" width="70%">
 
-- You can see your newly created Vorto Model in the [Vorto Repository](http://vorto.eclipse.org):
-
-<img src="./images/gettingstarted_bosch/console_createthingtype_4.png" width="70%">
-
-
-**Great!** You have just created a Vorto Information Model for your device. If you want to create more sophisticated models, feel free to use the [Model Builder](http://vorto.eclipse.org/editor).
 
 ### 2. Register device in the Bosch IoT Suite
 
-- [Register](tutorial_register_device.md) the device for your Information Model in the Bosch IoT Suite.
+- Select the thing type from the list and [register](tutorial_register_device.md) the device for your Information Model in the Bosch IoT Suite.
+- Choose a **technical device ID** for your device, e.g. the MAC address
+- Choose **MQTT** as a connector type and choose a password for device authentication
+- Upon registration completion, you should see the following summary page:
+
+<img src="./images/gettingstarted_bosch/console_createthingtype_4.png" width="70%">
 
 ### 3. Generate Python Code for MQTT 
 
-- Go to the [Vorto Repository](http://vorto.eclipse.org)
-- Filter for the information model from Step 1 and click for details
-- In the details page, choose **Python MQTT** from the list of **Generators**
-- Confirm with **Generate**. This will generate python code for a device that sends data to the Bosch IoT Suite via MQTT
-- Read the [Python MQTT Tutorial](tutorial_connect_device_using_mqtt_python.md) to learn how to configure and run the generated code.
+- Choose **Integrate device with Python** from the registration summary page and click **Download**
+- **Import** the generated source code template into your IDE
+- Click [Tutorial](tutorial_connect_device_using_mqtt_python.md) to learn how to configure and run the generated code.
 
 Once you are sending data to the Suite, you can verify the telemetry data in the [Bosch IoT Developer Console](https://console.bosch-iot-suite). For that just browse to the thing you had created in Step 2.
 
-### 4. Consume the data in a AngularJS/ Java Web Application
 
-Once the data is in the cloud, you can use the same Vorto Information Model and generate a full-fledged SpringBoot / AngularJS App that is able to receive the telemetry data and display them in a User Interface.
-
-For more info, please visit the [Web Application Tutorial](tutorial_create_webapp_dashboard.md).
-
-**Congratulations**. With just a single Vorto Information Model, you can connect a device and consume the device data in an application. 
-Feel free to check out the other tutorials from the [Tutorial Section](Readme.md)
+**Congratulations**! With just a single Vorto Information Model, you can connect a device by generating device code templates which send data to the Bosch IoT Suite. 
+Feel free to check out the other tutorials from the list of [tutorials](Readme.md) and learn for example, how to generate an AngularJS web application for your information model to consume the device data.

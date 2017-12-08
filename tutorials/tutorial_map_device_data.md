@@ -27,9 +27,9 @@ The second approach of having only a single voltage functionality would simplify
 
 ## Prerequisite
 
-- You have successfully booked the following services:
-	- Bosch IoT Things Service
-	- Bosch IoT Permissions Service
+* [Book](https://www.bosch-iot-suite.com) the following Bosch IoT Suite services :
+	- Bosch IoT Hub
+	- Bosch IoT Things
 
 ## Steps
 
